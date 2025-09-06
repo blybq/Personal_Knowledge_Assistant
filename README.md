@@ -183,21 +183,30 @@ npm run dev
 在`back_end/.env`中配置以下重要参数：
 
 ```env
-# 数据库连接
+# 邮件服务配置
+SMTP_SERVER=smtp.qq.com # 也可以选择其他类型邮箱如GMail
+SMTP_PORT=465 # 不同类型邮箱有不同端口号
+SENDER_EMAIL=你的邮箱
+SENDER_PASSWORD=你的邮箱授权码
+
+# 管理员配置
+ADMIN_NAME=admin
+ADMIN_EMAIL=你的管理员邮箱
+ADMIN_PWD=你的管理员密码
+
+# 数据库配置
 DATABASE_URL=mysql+pymysql://username:password@localhost:3306/knowledge_assistant
 
-# MinIO配置
-MINIO_ENDPOINT=localhost:9000
-MINIO_ACCESS_KEY=minioadmin
-MINIO_SECRET_KEY=minioadmin
+# API设置
+API_KEY=你的API_key
+# MinIO设置
+MINIO_URL=http://localhost:9000 # 生产环境时要换为实际服务器的URL
+MINIO_USERNAME=minioadmin # 替换为你的minio用户名
+MINIO_PWD=minioadmin # 替换为你的minio密码
 
-# JWT密钥（生产环境务必修改）
-JWT_SECRET_KEY=your-super-secret-jwt-key
-JWT_ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=1440
-
-# AI服务配置
-ZHIPUAI_API_KEY=your-zhipuai-api-key
+# JWT认证配置
+JWT_SECRET_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+# 随机生成的长字符串
 ```
 
 ## 开发说明
