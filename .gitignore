@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Vue.js
+dist/
+dist-ssr/
+*.local
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ChromaDB data
+back_end/chroma_db/
+
+# MinIO data
+minio_data/
+data/
+
+# Training data (exclude large training files)
+training_for_chromadb/
+
+# Test files
+test/
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp.txt
+
+# Backend specific
+back_end/__pycache__/
+
+# Frontend specific
+front_end/node_modules/
+front_end/dist/
+
+# Exclude large model files (if any)
+*.bin
+*.pth
+*.pt
+*.h5
+*.onnx
+
+# Exclude personal/backup files
+Personal_Knowledge_Assistant_*.zip
