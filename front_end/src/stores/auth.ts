@@ -49,6 +49,12 @@ export const useAuthStore = defineStore('auth', () => {
         return { success: false, message: response.message };
       }
     } catch (error: any) {
+            // 处理封禁用户的403错误
+      if (error.response?.status === 403) {
+        const message = error.response?.data?.detail || '您已被管理员封禁，无法登录';
+        return { success: false, message };
+      }
+      
       const message = error.response?.data?.message || '注册失败';
       return { success: false, message };
     } finally {

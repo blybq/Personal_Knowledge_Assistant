@@ -63,6 +63,13 @@ class SessionManager:
                 detail="邮箱或密码错误"
             )
         
+                # 检查用户是否被封禁
+        if user.is_banned:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="您已被管理员封禁，无法登录"
+            )
+        
         # 生成JWT token
         access_token = SessionManager.create_access_token(
             data={"sub": str(user.id), "email": user.email}
@@ -74,7 +81,8 @@ class SessionManager:
             "username": user.username,
             "email": user.email,
             "created_at": user.created_at.isoformat() if user.created_at else None,
-            "is_admin": user.is_admin
+            "is_admin": user.is_admin,
+            "is_banned": user.is_banned
         }
         
         # 获取用户对话历史标题
