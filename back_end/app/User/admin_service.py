@@ -157,7 +157,7 @@ class AdminService:
             db.query(Conversation).filter(Conversation.organization_id == organization_id).delete()
             
             # 3. 删除组织相关的笔记附件
-            from database.models import NoteAttachment, Note
+            from app.database.models import NoteAttachment, Note
             # 先找到组织的所有笔记
             org_notes = db.query(Note.id).filter(Note.organization_id == organization_id).all()
             note_ids = [note.id for note in org_notes]
@@ -370,7 +370,7 @@ class AdminService:
             db.query(Conversation).filter(Conversation.user_id == user_id).delete()
             
             # 3. 删除用户的笔记附件
-            from database.models import NoteAttachment, Note
+            from app.database.models import NoteAttachment, Note
             # 先找到用户的所有笔记
             user_notes = db.query(Note.id).filter(Note.user_id == user_id).all()
             note_ids = [note.id for note in user_notes]

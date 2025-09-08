@@ -36,7 +36,7 @@ class Question(BaseModel):
 @contextmanager
 def get_new_session() -> Generator[Session, None, None]:
     """获取新的数据库会话上下文管理器"""
-    from database.models import SessionLocal
+    from app.database.models import SessionLocal
     db = SessionLocal()
     try:
         yield db
