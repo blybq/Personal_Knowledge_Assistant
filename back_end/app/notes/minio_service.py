@@ -6,17 +6,18 @@ from typing import Optional
 from datetime import timedelta
 # from Config.config import minio_url, minio_username, minio_pwd
 
-minio_url = os.getenv("MINIO_URL")
+minio_url = os.getenv("MINIO_INTERNAL_URL")
 minio_username = os.getenv("MINIO_USERNAME")
 minio_pwd = os.getenv("MINIO_PWD")
+server_ip = os.getenv("SERVER_IP")
 
 class MinioService:
     def __init__(self):
         self.client = Minio(
-            minio_url.replace("http://", "").replace("https://", ""),
+            server_ip + ":9000",
             access_key=minio_username,
             secret_key=minio_pwd,
-            secure=minio_url.startswith("https://")
+            secure=False
         )
         self.bucket_name = "notes"
         self._ensure_bucket_exists()
