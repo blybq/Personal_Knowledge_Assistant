@@ -56,7 +56,22 @@ personal-knowledge-assistant/
 │   │   └── types/           # TypeScript类型定义
 │   ├── package.json         # 前端依赖
 │   └── vite.config.ts       # Vite配置
-└── knowledge_assistant.sql  # 数据库初始化脚本
+└── docker/                  # 容器部署
+│   ├── mysql
+│   ├── nginx
+│   │   ├── nginx.conf           # 反向代理配置
+│   ├── docker-compose.yml
+│   ├── Dockerfile.backend
+│   ├── Dockerfile.frontend
+└── scripts/
+│   ├── knowledge_assistant.sql
+└── docs/
+└── imgs/
+└──training_for_chromadb/
+│   ├──THUCNews.zip
+└── .gitignore
+└── .gitattribute
+└── README.md
 ```
 
 ## 安装和运行
