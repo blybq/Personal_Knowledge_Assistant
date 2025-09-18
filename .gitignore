@@ -75,13 +75,14 @@ minio_data/
 data/
 
 # Training data (exclude large training files)
-training_for_chromadb/
+# training_for_chromadb/
 
 # Test files
 test/
 
 # Build artifacts
 *.zip
+!training_for_chromadb/THUCNews.zip
 *.tar.gz
 
 # Coverage reports
